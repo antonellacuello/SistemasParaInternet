@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa do Rio Grande do Sul</title>
+    <style>
+        @keyframes piscar {
+            0% { color: red; }
+            25% { color: yellow; }
+            50% { color: green; }
+            75% { color: black; }
+            100% { color: red; }
+        }
+        
+        h1 {
+            animation: piscar 2s infinite;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mapa do Rio Grande do Sul <img src='figuras/mapa.svg' width='70' height='70' /></h1>
+    <p align='center'>
+    	<img src='figuras/mapa-normal-rs.jpg' alt='Mapa do RS' usemap=#rs-map border='2' width='800' height='800' />
+    </p>
+    <map name='rs-map'>
+		<area shape='circle' coords='540,600,20' href='figuras/molhes.jpg' />
+	</map>
+</body>
+</html>
