@@ -1,0 +1,28 @@
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%
+}
+td {
+    text-align: center;
+}
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.azul {
+    background-color: blue;
+}
+.verde {
+    background-color: green;
+}
+.rosa {
+    background-color: fuchsia;
+}
+.vermelho {
+    background-color: red;
+}
+.preto {
+    background-color: gray;
+}
