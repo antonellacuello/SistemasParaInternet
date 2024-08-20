@@ -1,0 +1,26 @@
+h1 {
+    color: purple;
+    text-align: center;
+    background-color: #ADD8E6;
+}
+p {
+    text-align: right;
+    color: blue;
+    text-decoration: overline;
+}
+.imagem {
+    text-align: center;
+}
+body {
+    background-image: url(https://wallpapercave.com/wp/wp12244090.jpg);
+}
+h1.secundario {
+    background-color: #CCAFFC;
+}
+#esquerda {
+    text-align: left;
+    background-color: #ADD8E6;
+}
+#direita {
+    text-align: right;
+}
