@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício para Entregar</title>
+</head>
+<body>
+    <form name="input" action="submetido.html" target="_blank" method="get">
+        <table>
+          <caption><b>Cadastro de Jogos</b></caption>
+            <tr>
+                <th>Nome: </th>
+                <td colspan="3"> <input type="text" name="nome" placeholder="Digite seu nome aqui" size="40"> </td>
+            </tr>
+            <tr>
+                <th>Curso: </th>
+                <td> 
+                   <select name="curso">
+                        <option value="si">Sistemas de Informação</option>
+                        <option value="ec">Engenharia de Computação</option>
+                        <option value="ea">Engenharia de Automação</option>
+                    </select>
+                </td>
+          </tr>
+            <tr>
+                <th>Matrícula: </th>
+                <td colspan="2"> <input type="text" name="nome" placeholder="Digite sua matrícula aqui" size="40"> </td>
+              <td>Ano: </td>
+              <td>
+                <select name="ano">
+                        <option value="ano">1</option>
+                        <option value="ano">2</option>
+                        <option value="ano">3</option>
+                        <option value="ano">4</option>
+                        <option value="ano">5</option>
+                    </select>
+              </td>
+            </tr>
+            <tr>
+              <th colspan="2">Jogos de preferência:</th>
+            </tr>
+            <tr>
+              <td colspan="2"> <input type="checkbox" name="esporte" value="volei">Vôlei 
+            <input type="checkbox" name="esporte" value="basquete">Basquete
+            <input type="checkbox" name="esporte" value="futebol">Futebol 
+            <input type="checkbox" name="esporte" value="padel">Tenis
+            <input type="checkbox" name="esporte" value="handebol">Handebol 
+            <input type="checkbox" name="esporte" value="handebol">Xadrez</td>
+            </tr>
+            <tr>
+              <th class="pref" colspan="5">Dia de preferência:</th>
+            </tr>
+            <tr>
+              <td colspan="3">
+              <input type="radio" name="dia" value="seg">Segunda 
+              <input type="radio" name="dia" value="ter">Terça
+              <input type="radio" name="dia" value="qua">Quarta 
+              <input type="radio" name="dia" value="qui">Quinta
+              <input type="radio" name="dia" value="sex">Sexta
+              </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center"> 
+                  <input class="botao" type="submit" value="Enviar"> 
+                  <input class="botao" type="reset" value="Limpar">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
