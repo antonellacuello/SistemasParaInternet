@@ -1,9 +1,14 @@
-.pref {
-    background-color: blue;
-    font-size: 14px;
-    font-family: Arial;
-    text-align: left;
-  }
+table {
+  border-width: thin;
+  border-style: solid;
+  background-color: lightblue;
+  font-size: 14px;
+  font-family: Arial;
+  text-align: left;
+}
 .botao {
-    background-color: green;
+  background-color: lightgreen;
+}
+caption {
+  font-size: 30px;
 }
