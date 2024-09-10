@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: 500px;
+    border: thin solid black;
+    border-collapse: collapse;
+    background-image: url(https://lembreiquetem.com.br/wp-content/uploads/2019/11/kit-34-dados-rpg-1-mm-para-artesanatos-jogos-e-decoracao-16mm.jpg);
+}
+.main {
+    background-color: orange;
+}
+input {
+    background-color: lightgray;
+}
+.bloco {
+    text-align: center;
+    background-color: lightgray;
+}
+.botao {
+    background-color: orange;
+}

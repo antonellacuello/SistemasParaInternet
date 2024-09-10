@@ -1,1 +1,66 @@
-
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 2 - 10/09/2024</title>
+    <link rel="stylesheet" type="text/css" href="ex1.css">
+</head>
+<body>
+    <form name="input" action="submetido.html" target="_blank" method="get">
+        <table>
+            <tr>
+                <th class="main" align="center">PREENCHA SEUS DADOS CORRETAMENTE</th>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td> 
+                    NOME: <input type="text" name="nome" size="20"> &nbsp;
+                    IDADE: <input type="text" name="idade" size="20"> &nbsp;
+                    SENHA: <input type="password" name="senha" size="20"> &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td> 
+                    Esportes que pratica: &nbsp;
+                    <input type="checkbox" name="esporte" value="volei">Vôlei &nbsp;
+                    <input type="checkbox" name="esporte" value="futebol">Futebol &nbsp;
+                    <input type="checkbox" name="esporte" value="handebol">Handebol &nbsp;
+                    &nbsp; Outro: <input type="text">
+            </tr>
+            <tr>
+                <td colspan="3">
+                    Gosta de doces:
+                    <input type="radio" name="doce-sim" value="seg">Sim 
+                    <input type="radio" name="doce-nao" value="ter">Não
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Selecione duas opções de comida: &nbsp;
+                   <select name="comida" multiple="multiple">
+                        <option value="lasanha">Lasanha</option>
+                        <option value="pizza">Pizza</option>
+                        <option value="churrasco">Churrasco</option>
+                        <option value="arroz-feijao">Arroz e Feijão</option>
+                        <option value="frango-frito">Frango Frito</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea class="bloco" name="historia-comida" rows="10" cols="100" placeholder="Conte uma história sobre comida!"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td align="center"> 
+                  <input class="botao" type="submit" value="Enviar"> 
+                  <input class="botao" type="reset" value="Limpar">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
