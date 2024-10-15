@@ -1,0 +1,24 @@
+table {
+    border: thin solid gray;
+    border-collapse: collapse;
+}
+tr {
+    text-align: center;
+}
+td {
+    border: 2px solid gray;
+    padding: 5px;
+}
+th {
+    border: 2px solid #000099;
+    padding: 8px;
+    background-color: gray;
+    color: #ffffff;
+}
+td.central {
+    text-align: center;
+}
+tr.alt {
+    color: white;
+    background-color: blue;
+}

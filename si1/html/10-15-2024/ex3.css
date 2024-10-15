@@ -1,0 +1,12 @@
+table {
+    border: thin solid black;
+    padding-left: 8px;
+}
+SPAN.red {
+    color: red;
+    font-size: 14px;
+}
+SPAN.blue {
+    color: blue;
+    font-size: 32px;
+}
