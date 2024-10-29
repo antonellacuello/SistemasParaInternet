@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando Objetos em JavaScript II</title>
+    <script>
+        function soma() {
+            var v1 = document.getElementById("valor1");
+            var v2 = document.getElementById("valor2");
+            soma = parseInt(v1.value) + parseInt(v2.value)
+            alert("A soma é " + soma)
+        }
+        function subtracao() {
+            var v1 = document.getElementById("valor1");
+            var v2 = document.getElementById("valor2");
+            subtracao = parseInt(v1.value) - parseInt(v2.value);
+            alert("A subtração é igual a " + subtracao);
+        }
+        function mult() {
+            var v1 = document.getElementById("valor1");
+            var v2 = document.getElementById("valor2");
+            mult = parseInt(v1.value) * parseInt(v2.value);
+            alert("A multiplicação é igual a " + mult);
+        }
+        function divisao() {
+            var v1 = document.getElementById("valor1");
+            var v2 = document.getElementById("valor2");
+            if (v2.value == 0)
+                alert("Impossível.");
+            else {
+                divisao = parseInt(v1.value) / parseInt(v2.value);
+                alert("A multiplicação é igual a " + divisao);
+            }
+        }
+    </script>
+    <style>
+        #nome {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora!</h1>
+    <form id="form">
+        Valor1: <input type="number" id="valor1"> </form> </br>
+        Valor2: <input type="number" id="valor2"> </form> <br>
+        <br>
+        <input type="button" id="botao" value="+" onclick="soma()">
+        <input type="button" id="botao" value="-" onclick="subtracao()">
+        <input type="button" id="botao" value="*" onclick="mult()"> 
+        <input type="button" id="botao" value="/" onclick="divisao()"> 
+    </form>
+</body>
+</html>
