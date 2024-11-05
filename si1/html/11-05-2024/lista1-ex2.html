@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 1 de JavaScript - EX2</title>
+    <script>
+        var dataAtual = new Date();
+        var horas = dataAtual.getHours();
+        if (horas < 13 && horas > 00) {
+            document.write("<h1>Bom dia!</h1>")
+        }
+        else if (horas > 12 && horas < 19) {
+            document.write("<h1>Boa tarde!</h1>")
+        }
+        else {
+            document.write("<h1>Boa noite!</h1>")
+        }
+
+    </script>
+</head>
+<body>
+</body>
+</html>
