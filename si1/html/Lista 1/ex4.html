@@ -1,0 +1,31 @@
+<!--4 – Faça um script que leia 5 valores (usando o comando Prompt) e retorne para o
+usuário o menor e o maior valor.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 1 - EX4</title>
+</head>
+<script>
+    function maiorMenorNumero() {
+        var maior = 0;
+        var n = prompt('Digite o valor: ');
+        var menor = n;
+        for (let i =0; i < 4; i++)
+            var n = prompt('Digite o valor: ');
+            if (n > maior) {
+                maior = n;
+            }
+            if (n < menor) {
+                menor = n;
+            }
+        alert('O maior número é ' + maior);
+        alert('O menor número é ' + menor);
+    }
+</script>
+<body>
+    <input type="button" value="Clique aqui!" onclick="maiorMenorNumero()">
+</body>
+</html>

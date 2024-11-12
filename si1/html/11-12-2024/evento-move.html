@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento - onMouseMove</title>
+</head>
+<script>
+    function myFuction(e) {
+        x = e.clientX;
+        y = e.clientY;
+        coor = 'Coordenadas: (' + x + ',' + y + ')';
+        document.getElementById('demo').innerHTML = coor;
+    }
+    function clearCoor() {
+        document.getElementById('demo').innerHTML = '';
+    }
+</script>
+<body>
+    <div id="coordiv" style="width: 199px; height: 99px; border: 1px solid" onmousemove="myFuction(event)" onmouseout="clearCoor()">
+    </div>
+    <p>Mova o mouse dentro do retangulo</p>
+    <p id="demo"></p>
+</body>
+</html>

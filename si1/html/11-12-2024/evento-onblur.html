@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento - OnBlur</title>
+</head>
+<script>
+    function myFunction() {
+        var x = document.getElementById('fname');
+        x.value = x.value.toUpperCase();
+    }
+</script>
+<body>
+    Entre com seu nome: <input type="text" id="fname" onblur="myFunction()">
+    <p>Quando você sair do input (o input perder o foco), a função
+        será chamada e irá transformar o texto em upper case.
+    </p>
+</body>
+</html>

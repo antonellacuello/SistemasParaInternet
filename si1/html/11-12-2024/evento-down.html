@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - onMouseDown</title>
+</head>
+<script>
+    function myFuction(elmnt, clr) {
+        elmnt.style.color=clr;
+    }
+</script>
+<body>
+    <p onmousedown="myFuction(this, 'red')" onmouseup="myFuction(this, 'green')">
+        Clique no texto para trocar de cor. A função é chamada com um parametro
+        quando o botão do mouse é pressionado. E com outro parametro
+        quando eu solto o botão do mouse.
+    </p>
+</body>
+</html>
