@@ -1,0 +1,24 @@
+<!--5 – Faça um script que imprima todos os números pares compreendidos entre 85 e
+901. O script deve também calcular a soma destes valores.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 1 - EX5</title>
+</head>
+<script>
+    var soma = 0;
+    for (var i = 85; i < 902; i++) {
+        soma += i
+        if (i % 2 == 0) {
+            document.write(i + '\n');
+        }
+    }
+    document.write('\n' + soma)
+</script>
+<body>
+    
+</body>
+</html>
