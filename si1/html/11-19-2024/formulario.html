@@ -7,16 +7,12 @@
     </head>
     <style>
         table {
+            padding: 10px;
             border: thin solid black;
-            border-collapse: collapse;
+            border-collapse: separate;
         }
-        tr {
-            text-align: center;
-            border: thin solid black;
-        }
-        td {
-            border: thin solid black;
-            padding: 8px;
+        th, td {
+            padding: 5px;
         }
     </style>
     <script>
@@ -46,45 +42,45 @@
         }
     </script>
     <body>
-        <form action="submetido.html" target="_blank" method="get">
-            <table>
-                <caption>Responda o formulário.</caption>
-                <tr>
-                    <th>Nome: </th>
-                    <td>
-                        <input type="text" name="nome" id="nome" onblur="formatarNome(this)" required placeholder="Digite seu nome aqui" size="22">
-                    </td>
-                </tr>
-                <tr>
-                    <th>Data: </th>
-                    <td>
-                        <input type="text" name="data" id="data" onblur="validarData(this)" required placeholder="Digite sua data de nascimento aqui" size="22">
-                    </td>
-                </tr>
-                <tr>
-                    <th>CPF: </th>
-                    <td>
-                        <input type="text" name="cpf" id="cpf" onblur="validarCPF(this)" required placeholder="Digite seu CPF aqui" size="22">
-                    </td>
-                </tr>
-                <tr>
-                    <th>Senha: </th>
-                    <td>
-                        <input type="password" id="senha" required placeholder="Digite sua senha aqui" size="22">
-                    </td>
-                </tr>
-                <tr>
-                    <th>Confirmar senha: </th>
-                    <td>
-                        <input type="password" name="confirmar-senha" id="confirmar-senha" onblur="verificarSenha(this)" required placeholder="Confirme sua senha aqui" size="22">
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" value="     OK     ">
-                    </td>
-                </tr>
-            </table>
+        <div id="main" align="center">
+            <form action="submetido.html" target="_blank" method="get">
+                <table cellspacing="0">
+                    <caption>Responda o formulário.</caption>
+                    <tr>
+                        <th>Nome: </th>
+                        <td>
+                            <input type="text" name="nome" id="nome" onblur="formatarNome(this)" required placeholder="Digite seu nome aqui" size="30">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Data: </th>
+                        <td>
+                            <input type="text" name="data" id="data" onblur="validarData(this)" required placeholder="Digite sua data de nascimento aqui" size="30">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>CPF: </th>
+                        <td>
+                            <input type="text" name="cpf" id="cpf" onblur="validarCPF(this)" required placeholder="Digite seu CPF aqui" size="30">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Senha: </th>
+                        <td>
+                            <input type="password" id="senha" required placeholder="Digite sua senha aqui" size="30">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Confirmar senha: </th>
+                        <td>
+                            <input type="password" name="confirmar-senha" id="confirmar-senha" onblur="verificarSenha(this)" required placeholder="Confirme sua senha aqui" size="30">
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" value="    OK    "> &nbsp;
+                <input type="reset" value="  Limpar  ">
+            </div>
         </form>
     </body>
 </html>
