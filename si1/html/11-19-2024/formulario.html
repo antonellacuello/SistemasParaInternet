@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Validação de Formulários</title>
+    </head>
+    <style>
+        table {
+            border: thin solid black;
+            border-collapse: collapse;
+        }
+        tr {
+            text-align: center;
+            border: thin solid black;
+        }
+        td {
+            border: thin solid black;
+            padding: 8px;
+        }
+    </style>
+    <script>
+        function formatarNome(nome) {
+        nome.value = nome.value.toUpperCase();
+        }
+
+        function validarCPF(cpf) {
+        if (!/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpf.value)) {
+            alert("CPF inválido");
+            cpf.value = "";
+        }
+        }
+
+        function validarData(data) {
+        if (!/^\d{2}\/\d{2}\/\d{4}$/.test(data.value)) {
+            alert("Data inválida");
+            data.value = "";
+        }
+        }
+
+        function verificarSenha(senha) {
+        if (senha.value != document.getElementById("senha").value) {
+            alert("Senhas diferentes");
+            senha.value = "";
+        }
+        }
+    </script>
+    <body>
+        <form action="submetido.html" target="_blank" method="get">
+            <table>
+                <caption>Responda o formulário.</caption>
+                <tr>
+                    <th>Nome: </th>
+                    <td>
+                        <input type="text" name="nome" id="nome" onblur="formatarNome(this)" required placeholder="Digite seu nome aqui" size="22">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Data: </th>
+                    <td>
+                        <input type="text" name="data" id="data" onblur="validarData(this)" required placeholder="Digite sua data de nascimento aqui" size="22">
+                    </td>
+                </tr>
+                <tr>
+                    <th>CPF: </th>
+                    <td>
+                        <input type="text" name="cpf" id="cpf" onblur="validarCPF(this)" required placeholder="Digite seu CPF aqui" size="22">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Senha: </th>
+                    <td>
+                        <input type="password" id="senha" required placeholder="Digite sua senha aqui" size="22">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Confirmar senha: </th>
+                    <td>
+                        <input type="password" name="confirmar-senha" id="confirmar-senha" onblur="verificarSenha(this)" required placeholder="Confirme sua senha aqui" size="22">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="     OK     ">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

@@ -10,19 +10,16 @@ usuário o menor e o maior valor.-->
 </head>
 <script>
     function maiorMenorNumero() {
-        var maior = 0;
+        let numeros = []
         var n = prompt('Digite o valor: ');
-        var menor = n;
-        for (let i =0; i < 4; i++)
+        numeros.push(n)
+        for (let i = 0; i < 4; i++) {
             var n = prompt('Digite o valor: ');
-            if (n > maior) {
-                maior = n;
-            }
-            if (n < menor) {
-                menor = n;
-            }
-        alert('O maior número é ' + maior);
-        alert('O menor número é ' + menor);
+            numeros.push(n)
+        }
+        let maiorNumero = Math.max(...numeros);
+        let menorNumero = Math.min(...numeros);
+        alert('O maior valor fornecido é ' + maiorNumero + '\nO menor valor fornecido é ' + menorNumero);
     }
 </script>
 <body>

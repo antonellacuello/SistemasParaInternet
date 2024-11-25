@@ -1,0 +1,33 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 2 - Expressões Regulares</title>
+</head>
+<script>
+    function isValidTelephone() {
+        var str = document.getElementById('telefone').value;
+        var regex = /^(0?[1-9]{2}[- ]?|\(0?[0-9]{2}\) ?)[2-9]?[0-9]{4}[- ]?[0-9]{4}$/;
+        if (regex.test(str)) {
+            alert('Telefone válido!');
+        } else {
+            alert('Telefone inválido.');
+        }
+    }
+</script>
+<body>
+    <h1>Exercício 2 - Expressões Regulares</h1>
+    <p>Escreva uma função para determinar se uma string representa
+        um número de telefone (fixo ou celular) válido. Exemplos de
+        números de telefones válidos:</p>
+    <ul>
+        <li>(53) 3123-4567</li>
+        <li>533123-4567</li>
+        <li>(053)3123-4567</li>
+        <li>(53)31234567</li>
+    </ul>
+    <p>
+        Telefone: <input type="text" id="telefone" onblur="isValidTelephone()">
+    </p>
+</body>
+</html>

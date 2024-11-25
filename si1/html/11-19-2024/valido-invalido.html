@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de Aula 1 - Expressões Regulares</title>
+</head>
+<script>
+    function inteiroOuReal(str) {
+        const regex = /^[+-]?\d+(\.\d+)?$/;
+        return regex.test(str);
+    }
+    function isValid() {
+        var str = document.getElementById('number-input').value;
+        if (inteiroOuReal(str)) {
+            alert('Número válido.');
+        } else {
+            alert('Número inválido.');
+        }
+    }
+</script>
+<body>
+    <h1>Exercício 1 - Expressões Regulares</h1>
+    <p>Escreva uma função para determinar se uma string representa
+        um número (inteiro ou real) válido. Exemplos de números
+        válidos: 10, +5, −3, −10.3, 0.80, 2.8033.</p>
+    <p>
+        Número: <input type="text" id="number-input" onblur="isValid()">
+    </p>
+</body>
+</html>
