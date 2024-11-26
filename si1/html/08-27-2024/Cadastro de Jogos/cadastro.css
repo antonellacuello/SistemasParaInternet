@@ -5,9 +5,10 @@ table {
   font-size: 14px;
   font-family: Arial;
   text-align: left;
+  padding-left: 10px;
 }
 .botao {
-  background-color: lightgreen;
+  background-color: lightpink;
 }
 caption {
   font-size: 30px;
