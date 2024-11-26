@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 3 - EX3</title>
+    <style>
+        table {
+            border: thin solid black;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        function intervalo() {
+            var v1 = parseFloat(document.getElementById("valor1").value);
+            var v2 = parseFloat(document.getElementById("valor2").value);
+            var intervalo = document.getElementById("intervalo");
+            if (v1 < v2) {
+                intervalo.innerHTML = "";
+                for (i = v1; i <= v2; i++) {
+                    intervalo.innerHTML += i + " ";
+                }
+            } else {
+                alert("o valor 2 deve ser maior que o valor 1.")
+                document.getElementById("valor2").value = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="main" align="center">
+        <h1>Exercício 3</h1>
+        <form id="form">
+            <table>
+                <tr>
+                    <td>Valor 1: <input type="number" id="valor1"> </form></td>
+                </tr>
+                <tr>
+                    <td>Valor 2: <input type="number" id="valor2"> </form></td>
+                </tr>
+                <tr>
+                    <td><p id="intervalo"></p></td>
+                </tr>
+                <tr>
+                    <td> <hr> </td>
+                </tr>
+                <tr>
+                    <td align="center"><input type="button" id="botao" value="OK" onclick="intervalo()"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

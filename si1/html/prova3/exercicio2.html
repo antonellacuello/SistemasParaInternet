@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prova 3 - EX2</title>
+        <script type="text/Javascript" lang="Javascript" src="exercicio2.js"></script>
+        <style>
+            table {
+                border: thin solid gray;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main" align="center">
+            <h1>Exercício 2</h1>
+            <form action="submetido.html" target="_blank" method="get" id="form">
+                <table>
+                    <tr>
+                        <th>Nome:</th>
+                        <td>
+                            <input type="text" id="nome" onkeyup="validarNome(this)" onblur="nomeMaiusculo(this)" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Idade:</th>
+                        <td>
+                            <input type="number" id="idade" onblur="validarIdade(this)" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Senha:</th>
+                        <td>
+                            <input type="password" id="senha" onblur="validarSenha()" required>
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <th>Confirmar senha:</th>
+                        <td>
+                            <input type="password" id="cofirmar-senha" onblur="validarConfirmacao()" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> <hr> </td>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Enviar"/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
