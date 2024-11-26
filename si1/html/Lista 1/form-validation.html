@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de Formulário</title>
+    <script type="text/Javascript" lang="Javascript">
+        function validarNome(nome) {
+            // var nome = document.getElementById("nome");
+            const regex = /^[a-zA-ZÀ-ÿ\s]+$/; 
+            if (!regex.test(nome.value)) {
+                alert("O nome deve conter apenas letras e espaços.");
+                nome.value = "";  
+            }
+        }
+        function nomeMaiusculo(nome) {
+            // var nome = document.getElementById("nome");
+            nome.value = nome.value.toUpperCase();
+        }
+        function validarIdade(idade) {
+            // var idade = parseInt(document.getElementById("idade")).value;
+            var idadeV = parseInt(idade.value);
+            if (idadeV <= 0  || idadeV > 150) {
+                alert("A idade deve ser maior que 0 e menor que 150.");
+                idade.value = "";
+            }
+        }
+        function validarSenha() {
+            const senha = document.getElementById("senha").value;
+            const confirmarSenha = document.getElementById("cofirmar-senha").value;
+
+            if (senha !== confirmarSenha) {
+                alert("As senhas são diferentes.");
+                document.getElementById("cofirmar-senha").value = "";
+            }
+        }
+    </script>
+    <style>
+        table {
+            border: thin solid gray;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main" align="center">
+        <h1>Login</h1>
+        <form action="submetido.html" target="_blank" method="get" id="form">
+            <table>
+                <tr>
+                    <th>Nome:</th>
+                    <td>
+                        <input type="text" id="nome" onkeyup="validarNome(this)" onblur="nomeMaiusculo(this)" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Idade:</th>
+                    <td>
+                        <input type="number" id="idade" onblur="validarIdade()" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Senha:</th>
+                    <td>
+                        <input type="password" id="senha" required>
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <th>Confirmar senha:</th>
+                    <td>
+                        <input type="password" id="cofirmar-senha" onblur="validarSenha(this)" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"> <hr> </td>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" onclick="validar(event)"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
