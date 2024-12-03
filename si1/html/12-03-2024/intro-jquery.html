@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao JQuery</title>
+</head>
+<script src="jquery.js"></script>
+<style>
+    #menu {
+        width: 10vw;
+        height: 100%;
+        text-align: left;
+        position: fixed;
+        float: left;
+        border-right: 1px solid black;
+    }
+
+    .main {
+        position: fixed;
+        margin-left: 11.5vw;
+    }
+    #p1 {
+        color: green;
+    }
+    #p2 {
+        color: red;
+    }
+</style>
+<body>
+    <div id="menu">
+        <h3>Menu</h3>
+        <p>Bibliotecas</p>
+        <p>Frameworks</p>
+        <p>Exercícios</p>
+    </div>
+    <div class="main">
+        <h1>Introdução ao JQuery</h1><hr>
+        <h2 id="bibliotecas">Bibliotecas</h2>
+        <p>Conjunto de funções para problemas específicos. EX: JQuery.</p>
+        <h2 id="frameworks">Frameworks</h2>
+        <p>Conjunto de funções para problemas gerais. EX: React.</p>
+        <h2 id="exercicios">Exercícios:</h2>
+        <p> <b>Exercício 1)</b> Crie dois paragráfos, o primeiro deve ter a cor do texto verde e o segundo deve ter a cor do texto vermelho. Quando ao cursor do mouse passar sobre o primeiro paragráfo, as cores dos textos devem ser invertidas (p1: vermelho e p2: verde).</p>
+        <p id="p1">Este é o primeiro paragráfo.</p>
+        <p id="p2">Este é o segundo paragráfo.</p>
+        <script>
+            $("#p1").hover(
+                function() { $(this).css("color", "red"), $("#p2").css("color", "green"); }
+            );
+            $("#p1").mouseout(
+                function() { $(this).css("color", "green"), $("#p2").css("color", "red"); }
+            )
+        </script>
+    </div>
+</body>
+</html>
