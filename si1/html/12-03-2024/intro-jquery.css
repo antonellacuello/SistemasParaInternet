@@ -8,8 +8,8 @@
 }
 
 #main {
-    
     margin-left: 11.5vw;
+    margin-right: 2vw;
     min-width: 80%;
     height: 100%; /* Garante que ocupe toda a altura da janela */
     overflow-y: auto; /* Permite rolar o conteúdo se ultrapassar a tela */
@@ -33,6 +33,10 @@
 
 .script {
     color: lightgrey;
+}
+
+#exercicios {
+    background-color: #CCFAFD;
 }
 
 #table-eventos {

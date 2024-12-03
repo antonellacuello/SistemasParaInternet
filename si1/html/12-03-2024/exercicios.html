@@ -37,7 +37,7 @@
                         $("#input2").val(texto_input);
                     }
                 );
-                $("#main-input", "input2").blur(
+                $("#main-input").blur(
                     function () {
                         $("#input2").val("");
                         $("#main-input").val("");
@@ -112,8 +112,8 @@
         <p><a href="exercicios.html">Exercícios</a></p>
     </div>
     <div id="main">
-        <h1>Introdução ao JQuery</h1><hr>
-        <div id="exercicios">
+        <h1>Introdução ao JQuery</h1>
+        <div class="outset" id="exercicios">
             <h2 align="center">Exercícios:</h2>
             <p> 
                 <b>Exercício 1)</b> Crie dois paragráfos, o primeiro deve ter a cor do texto verde e o segundo deve ter a cor do texto vermelho. Quando ao cursor do mouse passar sobre o primeiro paragráfo, as cores dos textos devem ser invertidas (p1: vermelho e p2: verde).
