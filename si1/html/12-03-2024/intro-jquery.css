@@ -1,0 +1,70 @@
+#menu {
+    width: 10vw;
+    height: 100%;
+    text-align: left;
+    position: fixed;
+    float: left;
+    border-right: 1px solid black;
+}
+
+#main {
+    
+    margin-left: 11.5vw;
+    min-width: 80%;
+    height: 100%; /* Garante que ocupe toda a altura da janela */
+    overflow-y: auto; /* Permite rolar o conteúdo se ultrapassar a tela */
+}
+
+#p1 {
+    color: green;
+}
+
+#p2 {
+    color: red;
+}
+
+.seletores {
+    color: lightseagreen;
+}
+
+.alterar-conteudo {
+    color: gray;
+}
+
+.script {
+    color: lightgrey;
+}
+
+#table-eventos {
+    border-collapse: collapse;
+    min-width: 80%;
+}
+
+#table-eventos, #table-eventos th, #table-eventos td {
+    border: 1px solid black;
+    text-align: center; 
+    padding: 5px; 
+    width: 25%;
+}
+
+
+.container {
+    display: flex; /* Configura o container como flexbox */
+    width: 100%; /* Faz o container ocupar toda a largura da tela */
+    gap: 10px; /* Espaçamento entre as divisões (opcional) */
+    padding-bottom: 10px;
+}
+
+#seletores, #alteracao-conteudo {
+    flex: 1; /* Cada divisão ocupa 50% da largura */
+    box-sizing: border-box; /* Garante que padding e borda não aumentem o tamanho */
+    padding: 10px; /* Adiciona espaçamento interno (opcional) */
+    border: 1px solid #ccc; /* Opcional: borda para visualização clara */
+}
+
+#eventos {
+    flex: 2;
+    box-sizing: border-box; /* Garante que padding e borda não aumentem o tamanho */
+    padding: 10px; /* Adiciona espaçamento interno (opcional) */
+    border: 1px solid #ccc; /* Opcional: borda para visualização clara */
+}

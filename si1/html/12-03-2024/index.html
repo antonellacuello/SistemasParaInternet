@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao JQuery</title>
+</head>
+<script src="jquery.js"></script>
+<link rel="stylesheet" href="intro-jquery.css">
+<body>
+    <div id="menu">
+        <h3>Menu</h3>
+        <p><a href="index.html">Início</a></p>
+        <p><a href="bibliotecas.html">O que são <b>Bibliotecas</b>?</a></p>
+        <p><a href="frameworks.html">O que são <b>Frameworks</b>?</a></p>
+        <p><a href="exercicios.html">Exercícios</a></p>
+    </div>
+    <div id="main">
+        <h1>Introdução ao JQuery</h1><hr>
+        <div class="container">
+            <div id="seletores" align="center">
+                <h2>Seletores</h2>
+                <p>Ferramentas para selecionar e manipular elementos HTML de forma eficiente.</p>
+                <table>
+                    <tr>
+                        <th rowspan="3"><h3>Básicos</h3></th>
+                        <td> <span class="seletores">$("p")</span> => Seleciona todos os paragráfos.</td>
+                    </tr>
+                    <tr>
+                        <td> <span class="seletores">$("#id")</span> => Seleciona elemento com id específico.</td>
+                    </tr>
+                    <tr>
+                        <td> <span class="seletores">$(".classe")</span> => Seleciona todos os elementos com aquela classe.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="height: 20px;"></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="3"><h3>Avançados</h3></th>
+                        <td> <span class="seletores">$("div > p")</span> => Seleciona o filho direto da div, no caso o primeiro paragráfo.</td>
+                    </tr>
+                    <tr>
+                        <td> <span class="seletores">$("[attribute]")</span> => Seleciona todos os elementos com determinado atributo.</td>
+                    </tr>
+                    <tr>
+                        <td> <span class="seletores">$("ul li:first")</span> => Seleciona o primeiro item da lista.</td>
+                    </tr>
+                    <tr>
+                </table>
+            </div>
+            <div id="alteracao-conteudo" align="center">
+                <h2>Alteração de Conteúdo</h2>
+                <p>Ferramentas para selecionar e manipular elementos HTML de forma eficiente.</p>
+                <table>
+                    <tr>
+                        <th rowspan="2"><h3>Texto</h3></th>
+                        <td class="alterar-conteudo">$("p").text("Novo texto aqui!")</td>
+                    </tr>
+                    <tr>
+                        <td>Exemplo: Exercício 2, na aba <a href="exercicios.html">Exercícios</a></td>
+                    </tr>
+                    <tr>
+                        <th><h3>Conteúdo</h3></th>
+                        <td class="alterar-conteudo">$("#conteudo").html("Novo conteúdo.")</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2"><h3>Valor</h3></th>
+                        <td> <span class="alterar-conteudo">$(".classe")</span> => Seleciona todos os elementos com aquela classe.</td>
+                    </tr>
+                    <tr>
+                        <td>Exemplo: Exercício 3, na aba <a href="exercicios.html">Exercícios</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+            <div id="eventos" align="center">
+                <h2>Eventos</h2>
+                <p>Ações disparadas pelo usuário, como cliques, digitação ou envio de formulário.</p>
+                <table id="table-eventos">
+                    <tr>
+                        <th>Função</th>
+                        <th>Descrição</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Eventos de Mouse</th>
+                    </tr>
+                    <tr>
+                        <th>.change()</th>
+                        <td>Disparado toda vez que o valor do elemento é alterado.</td>
+                    </tr>
+                    <tr>
+                        <th>.click()</th>
+                        <td>Disparao quando um click do mouse é detectado em determinado elemento.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios</title>
+</head>
+<script src="jquery.js"></script>
+<link rel="stylesheet" href="intro-jquery.css">
+<body>
+    <script>
+        // função é executa quando o documento HTML ta completamente carregado
+        $(document).ready(function () {
+                // Exercício 1
+                $("#p1").mouseover(
+                    function() { $(this).css("color", "red"), $("#p2").css("color", "green"); }
+                );
+                $("#p1").mouseout(
+                    function() { $(this).css("color", "green"), $("#p2").css("color", "red"); }
+                );
+
+                // Exercício 2
+                $("#botao").click(
+                    function () {
+                        // executa quando o elemento com id "botao" é clicado.
+                        var nome = $("#nome").val();
+                        // pega o valor do campo de entrada com id "nome" e armazena na variável 'nome'.
+                        $("#saida-nome").text("Seu nome é: " + nome);
+                        // defini o texto do elemento com id "paragrafo" para "Seu nome eh: " seguido do valor da variável 'nome'.
+                    }
+                );
+
+                // Exercício 3
+                $("#main-input").keyup(
+                    function () {
+                        var texto_input = $("#main-input").val();
+                        $("#input2").val(texto_input);
+                    }
+                );
+                $("#main-input", "input2").blur(
+                    function () {
+                        $("#input2").val("");
+                        $("#main-input").val("");
+                    }
+                );
+
+                // Botão para ver script EX1
+                $("#botao-ex1").click(
+                    function () {
+                        var scriptText = `
+                            <p>
+                                $("#p1").mouseover(function() { 
+                                    $(this).css("color", "red"); 
+                                    $("#p2").css("color", "green"); 
+                                });
+                                $("#p1").mouseout(function() { 
+                                    $(this).css("color", "green"); 
+                                    $("#p2").css("color", "red"); 
+                                });
+                            </p>
+                        `;
+                        $("#ex1-script").html(scriptText);
+                    }
+                );
+                
+                // Botão para ver script EX2
+                $("#botao-ex2").click(
+                    function () {
+                        var scriptText = `
+                            <p>
+                                $("#botao").click(
+                                    function () {
+                                        var nome = $("#nome").val();
+                                        $("#saida-nome").text("Seu nome é: " + nome);
+                                    }
+                                );
+                            </p>
+                        `;
+                        $("#ex2-script").html(scriptText);
+                    }
+                );
+
+                // Botão para ver script EX3
+                $("#botao-ex3").click(
+                    function () {
+                        var scriptText = `
+                            <p>
+                                $("#main-input").keyup(
+                                    function () {
+                                        var texto_input = $("#main-input").val();
+                                        $("#input2").val(texto_input);
+                                    }
+                                );
+                                $("#main-input", "input2").blur(
+                                    function () {
+                                        $("#input2").val("");
+                                        $("#main-input").val("");
+                                    }
+                                );
+                            </p>
+                        `;
+                        $("#ex3-script").html(scriptText);
+                    }
+                );
+        });
+    </script>
+    <div id="menu">
+        <h3>Menu</h3>
+        <p><a href="index.html">Início</a></p>
+        <p><a href="bibliotecas.html">O que são <b>Bibliotecas</b>?</a></p>
+        <p><a href="frameworks.html">O que são <b>Frameworks</b>?</a></p>
+        <p><a href="exercicios.html">Exercícios</a></p>
+    </div>
+    <div id="main">
+        <h1>Introdução ao JQuery</h1><hr>
+        <div id="exercicios">
+            <h2 align="center">Exercícios:</h2>
+            <p> 
+                <b>Exercício 1)</b> Crie dois paragráfos, o primeiro deve ter a cor do texto verde e o segundo deve ter a cor do texto vermelho. Quando ao cursor do mouse passar sobre o primeiro paragráfo, as cores dos textos devem ser invertidas (p1: vermelho e p2: verde).
+                <input id="botao-ex1" type="button" value="Ver Script">
+            </p>
+            <p id="p1">Este é o primeiro paragráfo.</p>
+            <p id="p2">Este é o segundo paragráfo.</p>
+            <p id="ex1-script" class="script"></p>
+
+            <p> 
+                <b>Exercício 2)</b> Crie um input para receber um nome, um paragráfo vazio e um botão denominado concluir. Note que o usuário deve preencher seu nome e clicar no botão concluir, logo em seguida o paragráfo vazio deve ser atualizado para a seguinte frase "seu nome é:" seguido do nome que o usuário digitou.
+                <input id="botao-ex2" type="button" value="Ver Script">
+            </p>
+            <input type="text" id="nome" placeholder="Digite seu nome">
+            <p id="saida-nome"></p>
+            <input id="botao" type="button" value="Concluir">
+            <p id="ex2-script" class="script"></p>
+
+            <p> 
+                <b>Exercício 3)</b> Crie dois inputs. Neste exercício tudo que for escrito no primeiro input deve automaticamente e instantaneamente ser clonado pага о segundo input.
+                <input id="botao-ex3" type="button" value="Ver Script">
+            </p>
+            <input type="text" id="main-input" placeholder="Digite algo">
+            <input type="text" id="input2" placeholder="Esse algo virá pra cá">
+            <p id="ex3-script" class="script"></p>
+        </div>
+    </div>
+</body>
+</html>
