@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gráficos Dinâmicos</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .chart-section {
+        margin-bottom: 40px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+      }
+      .chart-container {
+        width: 80%;
+        height: 300px;
+        margin-top: 20px;
+      }
+      .inputs {
+        margin-top: 10px;
+      }
+      .inputs label {
+        margin-right: 10px;
+      }
+      .inputs input {
+        margin-right: 10px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .inputs button {
+        padding: 5px 15px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .inputs button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gráficos Dinâmicos</h1>
+
+    <!-- Seção para Gráfico de Linhas -->
+    <div class="chart-section">
+      <h2>Gráfico de Linhas</h2>
+      <div class="inputs">
+        <label for="labelsLine"
+          >Nomes dos Pontos (separados por vírgulas):</label
+        >
+        <input
+          type="text"
+          id="labelsLine"
+          placeholder="Ex: Dia 1, Dia 2, Dia 3"
+        />
+        <br /><br />
+        <label for="numLinesLine">Quantidade de Linhas:</label>
+        <input type="number" id="numLinesLine" min="1" value="1" />
+        <br /><br />
+        <div id="linesInputsLine"></div>
+        <br />
+        <button class="btn-line-chart">Gerar/Editar Gráfico de Linhas</button>
+      </div>
+      <div class="chart-container">
+        <canvas class="line-chart"></canvas>
+      </div>
+    </div>
+
+    <!-- Seção para Gráfico de Barras -->
+    <div class="chart-section">
+      <h2>Gráfico de Barras</h2>
+      <div class="inputs">
+        <label for="labelsBar"
+          >Nomes dos Pontos (separados por vírgulas):</label
+        >
+        <input
+          type="text"
+          id="labelsBar"
+          placeholder="Ex: Dia 1, Dia 2, Dia 3"
+        />
+        <br /><br />
+        <label for="numBars">Quantidade de Barras:</label>
+        <input type="number" id="numBars" min="1" value="1" />
+        <br /><br />
+        <div id="barsInputs"></div>
+        <br />
+        <button class="btn-bar-chart">Gerar/Editar Gráfico de Barras</button>
+      </div>
+      <div class="chart-container">
+        <canvas class="bar-chart"></canvas>
+      </div>
+    </div>
+
+    <!-- Seção para Gráfico Radar -->
+    <div class="chart-section">
+      <h2>Gráfico Radar</h2>
+      <div class="inputs">
+        <label for="labelsRadar"
+          >Nomes dos Pontos (separados por vírgulas):</label
+        >
+        <input
+          type="text"
+          id="labelsRadar"
+          placeholder="Ex: Dia 1, Dia 2, Dia 3"
+        />
+        <br /><br />
+        <label for="numDatasetsRadar">Quantidade de Conjuntos de Dados:</label>
+        <input type="number" id="numDatasetsRadar" min="1" value="1" />
+        <br /><br />
+        <div id="datasetsInputsRadar"></div>
+        <br />
+        <button class="btn-radar-chart">Gerar/Editar Gráfico Radar</button>
+      </div>
+      <div class="chart-container">
+        <canvas class="radar-chart"></canvas>
+      </div>
+    </div>
+
+    <!-- Seção para Gráfico Polar Area -->
+    <div class="chart-section">
+      <h2>Gráfico Polar Area</h2>
+      <div class="inputs">
+        <label for="labelsPolarArea"
+          >Nomes dos Pontos (separados por vírgulas):</label
+        >
+        <input
+          type="text"
+          id="labelsPolarArea"
+          placeholder="Ex: Dia 1, Dia 2, Dia 3"
+        />
+        <br /><br />
+        <label for="numSegmentsPolarArea">Quantidade de Segmentos:</label>
+        <input type="number" id="numSegmentsPolarArea" min="1" value="1" />
+        <br /><br />
+        <div id="segmentsInputsPolarArea"></div>
+        <br />
+        <button class="btn-polar-area-chart">
+          Gerar/Editar Gráfico Polar Area
+        </button>
+      </div>
+      <div class="chart-container">
+        <canvas class="polar-area-chart"></canvas>
+      </div>
+    </div>
+
+    <!-- Seção para Gráfico Doughnut -->
+    <div class="chart-section">
+      <h2>Gráfico Doughnut</h2>
+      <div class="inputs">
+        <label for="labelsDoughnut"
+          >Nomes dos Pontos (separados por vírgulas):</label
+        >
+        <input
+          type="text"
+          id="labelsDoughnut"
+          placeholder="Ex: Dia 1, Dia 2, Dia 3"
+        />
+        <br /><br />
+        <label for="numSegmentsDoughnut">Quantidade de Segmentos:</label>
+        <input type="number" id="numSegmentsDoughnut" min="1" value="1" />
+        <br /><br />
+        <div id="segmentsInputsDoughnut"></div>
+        <br />
+        <button class="btn-doughnut-chart">
+          Gerar/Editar Gráfico Doughnut
+        </button>
+      </div>
+      <div class="chart-container">
+        <canvas class="doughnut-chart"></canvas>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        let lineChart, barChart, radarChart, polarAreaChart, doughnutChart;
+
+        // Função para parsear os dados de entrada
+        function parseData(input) {
+          return input.split(",").map(Number);
+        }
+
+        // Função para gerar cores aleatórias
+        function getRandomColor(opacity = 0.2) {
+          return `rgba(${Math.floor(
+            Math.random() * 255
+          )}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${opacity})`;
+        }
+
+        // Função para criar campos de entrada para valores separados por vírgula
+        function createCommaSeparatedInputs(
+          num,
+          containerId,
+          labelPrefix,
+          inputPrefix
+        ) {
+          const container = $(containerId);
+          let htmlContent = "";
+
+          for (let i = 1; i <= num; i++) {
+            htmlContent += `
+              <label for="${inputPrefix}${i}">${labelPrefix} ${i} (separados por vírgulas):</label>
+              <input type="text" id="${inputPrefix}${i}" placeholder="Ex: 65, 59, 80" />
+              <br /><br />
+            `;
+          }
+
+          container.html(htmlContent);
+        }
+
+        // Função para criar campos de entrada para valores únicos
+        function createSingleValueInputs(
+          num,
+          containerId,
+          labelPrefix,
+          inputPrefix
+        ) {
+          const container = $(containerId);
+          let htmlContent = "";
+
+          for (let i = 1; i <= num; i++) {
+            htmlContent += `
+              <label for="${inputPrefix}${i}">${labelPrefix} ${i} (Valor único):</label>
+              <input type="text" id="${inputPrefix}${i}" placeholder="Ex: 65" />
+              <br /><br />
+            `;
+          }
+
+          container.html(htmlContent);
+        }
+
+        // Função para criar os campos de entrada para as linhas do gráfico de linhas
+        function createLineInputs() {
+          const numLines = $("#numLinesLine").val();
+          createCommaSeparatedInputs(
+            numLines,
+            "#linesInputsLine",
+            "Pontos Linha",
+            "line"
+          );
+        }
+
+        // Função para criar os campos de entrada para as barras do gráfico de barras
+        function createBarInputs() {
+          const numBars = $("#numBars").val();
+          createCommaSeparatedInputs(
+            numBars,
+            "#barsInputs",
+            "Pontos Barra",
+            "bar"
+          );
+        }
+
+        // Função para criar os campos de entrada para os conjuntos de dados do gráfico radar
+        function createRadarInputs() {
+          const numDatasets = $("#numDatasetsRadar").val();
+          createCommaSeparatedInputs(
+            numDatasets,
+            "#datasetsInputsRadar",
+            "Pontos Conjunto",
+            "datasetRadar"
+          );
+        }
+
+        // Função para criar os campos de entrada para os segmentos do gráfico polar area
+        function createPolarAreaInputs() {
+          const numSegments = $("#numSegmentsPolarArea").val();
+          createSingleValueInputs(
+            numSegments,
+            "#segmentsInputsPolarArea",
+            "Pontos Segmento",
+            "segmentPolarArea"
+          );
+        }
+
+        // Função para criar os campos de entrada para os segmentos do gráfico doughnut
+        function createDoughnutInputs() {
+          const numSegments = $("#numSegmentsDoughnut").val();
+          createSingleValueInputs(
+            numSegments,
+            "#segmentsInputsDoughnut",
+            "Pontos Segmento",
+            "segmentDoughnut"
+          );
+        }
+
+        // Função para criar ou editar o gráfico de linhas
+        function createLineChart() {
+          const labels = $("#labelsLine").val().split(",");
+          const numLines = $("#numLinesLine").val();
+          const datasets = [];
+
+          for (let i = 1; i <= numLines; i++) {
+            const data = parseData($(`#line${i}`).val());
+            datasets.push({
+              label: `Linha ${i}`,
+              data: data,
+              fill: false,
+              borderColor: getRandomColor(1),
+              tension: 0.1,
+            });
+          }
+
+          const data = {
+            labels: labels,
+            datasets: datasets,
+          };
+
+          const ctx = $(".line-chart");
+
+          if (lineChart) {
+            lineChart.destroy();
+          }
+
+          lineChart = new Chart(ctx, {
+            type: "line",
+            data: data,
+            options: {
+              responsive: true,
+              scales: {
+                x: {
+                  beginAtZero: true,
+                },
+                y: {
+                  beginAtZero: true,
+                },
+              },
+            },
+          });
+        }
+
+        // Função para criar ou editar o gráfico de barras
+        function createBarChart() {
+          const labels = $("#labelsBar").val().split(",");
+          const numBars = $("#numBars").val();
+          const datasets = [];
+
+          for (let i = 1; i <= numBars; i++) {
+            const data = parseData($(`#bar${i}`).val());
+            datasets.push({
+              label: `Barra ${i}`,
+              data: data,
+              backgroundColor: getRandomColor(),
+              borderColor: getRandomColor(1),
+              borderWidth: 1,
+            });
+          }
+
+          const data = {
+            labels: labels,
+            datasets: datasets,
+          };
+
+          const ctx = $(".bar-chart");
+
+          if (barChart) {
+            barChart.destroy();
+          }
+
+          barChart = new Chart(ctx, {
+            type: "bar",
+            data: data,
+            options: {
+              responsive: true,
+              scales: {
+                x: {
+                  beginAtZero: true,
+                },
+                y: {
+                  beginAtZero: true,
+                },
+              },
+            },
+          });
+        }
+
+        // Função para criar ou editar o gráfico radar
+        function createRadarChart() {
+          const labels = $("#labelsRadar").val().split(",");
+          const numDatasets = $("#numDatasetsRadar").val();
+          const datasets = [];
+
+          for (let i = 1; i <= numDatasets; i++) {
+            const data = parseData($(`#datasetRadar${i}`).val());
+            datasets.push({
+              label: `Conjunto ${i}`,
+              data: data,
+              fill: true,
+              backgroundColor: getRandomColor(),
+              borderColor: getRandomColor(1),
+              borderWidth: 1,
+            });
+          }
+
+          const data = {
+            labels: labels,
+            datasets: datasets,
+          };
+
+          const ctx = $(".radar-chart");
+
+          if (radarChart) {
+            radarChart.destroy();
+          }
+
+          radarChart = new Chart(ctx, {
+            type: "radar",
+            data: data,
+            options: {
+              responsive: true,
+              scales: {
+                r: {
+                  beginAtZero: true,
+                },
+              },
+            },
+          });
+        }
+
+        // Função para criar ou editar o gráfico polar area
+        function createPolarAreaChart() {
+          const labels = $("#labelsPolarArea").val().split(",");
+          const numSegments = $("#numSegmentsPolarArea").val();
+          const data = [];
+
+          for (let i = 1; i <= numSegments; i++) {
+            data.push(parseData($(`#segmentPolarArea${i}`).val())[0]);
+          }
+
+          const chartData = {
+            labels: labels,
+            datasets: [
+              {
+                data: data,
+                backgroundColor: labels.map(() => getRandomColor()),
+                borderColor: labels.map(() => getRandomColor(1)),
+                borderWidth: 1,
+              },
+            ],
+          };
+
+          const ctx = $(".polar-area-chart");
+
+          if (polarAreaChart) {
+            polarAreaChart.destroy();
+          }
+
+          polarAreaChart = new Chart(ctx, {
+            type: "polarArea",
+            data: chartData,
+            options: {
+              responsive: true,
+            },
+          });
+        }
+
+        // Função para criar ou editar o gráfico doughnut
+        function createDoughnutChart() {
+          const labels = $("#labelsDoughnut").val().split(",");
+          const numSegments = $("#numSegmentsDoughnut").val();
+          const data = [];
+
+          for (let i = 1; i <= numSegments; i++) {
+            data.push(parseData($(`#segmentDoughnut${i}`).val())[0]);
+          }
+
+          const chartData = {
+            labels: labels,
+            datasets: [
+              {
+                data: data,
+                backgroundColor: labels.map(() => getRandomColor()),
+                borderColor: labels.map(() => getRandomColor(1)),
+                borderWidth: 1,
+              },
+            ],
+          };
+
+          const ctx = $(".doughnut-chart");
+
+          if (doughnutChart) {
+            doughnutChart.destroy();
+          }
+
+          doughnutChart = new Chart(ctx, {
+            type: "doughnut",
+            data: chartData,
+            options: {
+              responsive: true,
+            },
+          });
+        }
+
+        // Ação do botão para gerar ou editar os gráficos
+        $(".btn-line-chart").click(createLineChart);
+        $(".btn-bar-chart").click(createBarChart);
+        $(".btn-radar-chart").click(createRadarChart);
+        $(".btn-polar-area-chart").click(createPolarAreaChart);
+        $(".btn-doughnut-chart").click(createDoughnutChart);
+
+        // Ação para criar os campos de entrada para as linhas
+        $("#numLinesLine").change(createLineInputs);
+        $("#numBars").change(createBarInputs);
+        $("#numDatasetsRadar").change(createRadarInputs);
+        $("#numSegmentsPolarArea").change(createPolarAreaInputs);
+        $("#numSegmentsDoughnut").change(createDoughnutInputs);
+
+        // Inicializar os campos de entrada para as linhas
+        createLineInputs();
+        createBarInputs();
+        createRadarInputs();
+        createPolarAreaInputs();
+        createDoughnutInputs();
+      });
+    </script>
+  </body>
+</html>

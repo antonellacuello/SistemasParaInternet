@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gráficos Interativos com Highcharts e jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+      }
+      .chart-section {
+        margin-bottom: 50px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      .chart-container {
+        width: 100%;
+        height: 400px;
+        margin-top: 20px;
+      }
+      .inputs {
+        margin-top: 10px;
+      }
+      .inputs label {
+        margin-right: 10px;
+      }
+      .inputs input {
+        margin-right: 10px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .inputs button {
+        padding: 5px 15px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .inputs button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gráficos Interativos com Highcharts e jQuery</h1>
+
+    <!-- Gráfico de Linhas -->
+    <div class="chart-section">
+      <h2>Gráfico de Linhas</h2>
+      <div class="inputs">
+        <label>Valores (separados por vírgulas):</label>
+        <input type="text" class="line-data" placeholder="Ex: 1,3,2,4,5" />
+        <label>Nomes (opcional, separados por vírgulas):</label>
+        <input
+          type="text"
+          class="line-names"
+          placeholder="Ex: Jan,Feb,Mar,Apr,May"
+        />
+        <button class="btn-line-chart">Atualizar Gráfico</button>
+      </div>
+      <div class="chart-container line-chart"></div>
+    </div>
+
+    <!-- Gráfico de Colunas -->
+    <div class="chart-section">
+      <h2>Gráfico de Colunas</h2>
+      <div class="inputs">
+        <label>Valores (separados por vírgulas):</label>
+        <input type="text" class="column-data" placeholder="Ex: 3,4,5" />
+        <label>Nomes (opcional, separados por vírgulas):</label>
+        <input
+          type="text"
+          class="column-names"
+          placeholder="Ex: Produto A,Produto B,Produto C"
+        />
+        <button class="btn-column-chart">Atualizar Gráfico</button>
+      </div>
+      <div class="chart-container column-chart"></div>
+    </div>
+
+    <!-- Gráfico de Pizza -->
+    <div class="chart-section">
+      <h2>Gráfico de Pizza</h2>
+      <div class="inputs">
+        <label>Valores (separados por vírgulas):</label>
+        <input type="text" class="pie-data" placeholder="Ex: 40,30,30" />
+        <label>Nomes (opcional, separados por vírgulas):</label>
+        <input
+          type="text"
+          class="pie-names"
+          placeholder="Ex: Categoria A,Categoria B,Categoria C"
+        />
+        <button class="btn-pie-chart">Atualizar Gráfico</button>
+      </div>
+      <div class="chart-container pie-chart"></div>
+    </div>
+
+    <!-- Gráfico de Áreas -->
+    <div class="chart-section">
+      <h2>Gráfico de Áreas</h2>
+      <div class="inputs">
+        <label>Valores (separados por vírgulas):</label>
+        <input type="text" class="area-data" placeholder="Ex: 10,15,20,25" />
+        <label>Nomes (opcional, separados por vírgulas):</label>
+        <input
+          type="text"
+          class="area-names"
+          placeholder="Ex: Semana 1,Semana 2,Semana 3,Semana 4"
+        />
+        <button class="btn-area-chart">Atualizar Gráfico</button>
+      </div>
+      <div class="chart-container area-chart"></div>
+    </div>
+
+    <script>
+      function parseData(input) {
+        return input.split(",").map(Number);
+      }
+
+      function parseNames(input, dataLength) {
+        const names = input ? input.split(",") : [];
+        return names.length === dataLength
+          ? names
+          : Array.from({ length: dataLength }, (_, i) => `Item ${i + 1}`);
+      }
+
+      $(document).ready(function () {
+        $(".btn-line-chart").click(function () {
+          const data = parseData($(".line-data").val());
+          const names = parseNames($(".line-names").val(), data.length);
+
+          Highcharts.chart($(".line-chart")[0], {
+            chart: { type: "line" },
+            title: { text: "Gráfico de Linhas" },
+            xAxis: { categories: names },
+            yAxis: {
+              title: {
+                text: "Nutrientes",
+              },
+            },
+            series: [{ name: "Valores", data }],
+          });
+        });
+
+        $(".btn-column-chart").click(function () {
+          const data = parseData($(".column-data").val());
+          const names = parseNames($(".column-names").val(), data.length);
+
+          Highcharts.chart($(".column-chart")[0], {
+            chart: { type: "column" },
+            title: { text: "Gráfico de Colunas" },
+            xAxis: { categories: names },
+            series: [{ name: "Valores", data }],
+          });
+        });
+
+        $(".btn-pie-chart").click(function () {
+          const data = parseData($(".pie-data").val());
+          const names = parseNames($(".pie-names").val(), data.length);
+
+          Highcharts.chart($(".pie-chart")[0], {
+            chart: { type: "pie" },
+            title: { text: "Gráfico de Pizza" },
+            series: [
+              {
+                name: "Participação",
+                data: data.map((value, i) => ({ name: names[i], y: value })),
+              },
+            ],
+          });
+        });
+
+        $(".btn-area-chart").click(function () {
+          const data = parseData($(".area-data").val());
+          const names = parseNames($(".area-names").val(), data.length);
+
+          Highcharts.chart($(".area-chart")[0], {
+            chart: { type: "area" },
+            title: { text: "Gráfico de Áreas" },
+            xAxis: { categories: names },
+            series: [{ name: "Valores", data }],
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

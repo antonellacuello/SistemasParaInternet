@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <style>
+      .chart-container {
+        width: 100%;
+        max-width: 600px;
+        height: 400px;
+        margin: 20px auto;
+      }
+      .chart-container canvas {
+        width: 100% !important;
+        height: auto !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exercício 1</h1>
+    <p>Construa um gráfico de LINHAS com 2 linhas e 3 pontos.</p>
+
+    <div class="chart-container">
+        <canvas id="chartjs-line-chart"></canvas>
+      </div>
+
+    <script>
+      $(document).ready(function () {
+        const ctx = document
+          .getElementById("chartjs-line-chart")
+          .getContext("2d");
+        const lineChart = new Chart(ctx, {
+          type: "line", 
+          data: {
+            labels: ["Ponto A", "Ponto B", "Ponto C"], 
+            datasets: [
+              {
+                label: "Linha A", // Nome da linha
+                data: [20, 4, 9], // Dados da linha
+                borderColor: "red", 
+                fill: false, // Não preencher a área abaixo da linha
+              },
+              {
+                label: "Linha B",
+                data: [15, 8, 12],
+                borderColor: "blue",
+                fill: false,
+              },
+            ],
+          },
+          options: {
+            responsive: true, // Tornar o gráfico responsivo
+            maintainAspectRatio: false, // Manter a proporção do gráfico
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

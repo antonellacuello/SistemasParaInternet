@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 4: Gráfico de Área Polar</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      .chart-container {
+        width: 100%;
+        max-width: 600px;
+        height: 400px;
+        margin: 0 auto;
+      }
+      .chart-container canvas {
+        width: 100% !important;
+        height: auto !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exercício 4: Gráfico de Área Polar</h1>
+
+    <div class="chart-container">
+      <canvas class="polar-area-chart"></canvas>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        const ctx = $(".polar-area-chart");
+
+        const polarAreaChart = new Chart(ctx, {
+          type: "polarArea",
+          data: {
+            labels: ["Norte", "Sul", "Leste", "Oeste"],
+            datasets: [
+              {
+                label: "Valores",
+                data: [40, 60, 80, 100],
+                backgroundColor: [
+                  "rgba(255, 99, 132, 0.2)",
+                  "rgba(54, 162, 235, 0.2)",
+                  "rgba(255, 206, 86, 0.2)",
+                  "rgba(75, 192, 192, 0.2)",
+                ],
+                borderColor: [
+                  "rgba(255, 99, 132, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(255, 206, 86, 1)",
+                  "rgba(75, 192, 192, 1)",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 1: Gráfico de Linhas</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>Exercício 1: Gráfico de Linhas</h1>
+
+    <div class="chart-container">
+      <canvas class="line-chart"></canvas>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        /*
+        O motivo pelo qual usamos [0].getContext("2d") é porque o jQuery retorna um objeto jQuery,
+        que é uma coleção de elementos DOM. Para acessar o elemento DOM subjacente (neste caso, o elemento <canvas>),
+        precisamos usar [0] para obter o primeiro elemento da coleção.
+        Em seguida, chamamos getContext("2d") no elemento <canvas> para obter o contexto 2D necessário para desenhar o gráfico com Chart.js.
+
+        Aqui está uma explicação detalhada:
+
+        $(".line-chart") retorna um objeto jQuery que contém todos os elementos que correspondem ao seletor .line-chart.
+        $(".line-chart")[0] acessa o primeiro elemento da coleção jQuery, que é o elemento <canvas>.
+        $(".line-chart")[0].getContext("2d") chama o método getContext("2d") no elemento <canvas> para obter o contexto 2D,
+           que é necessário para desenhar o gráfico com Chart.js.
+        */
+
+        const ctx = $(".line-chart")[0].getContext("2d");
+
+        const lineChart = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: ["A", "B", "C"],
+            datasets: [
+              {
+                label: "Linha 1",
+                data: [20, 4, 9],
+                borderColor: "#FF5733",
+                fill: false,
+              },
+              {
+                label: "Linha 2",
+                data: [15, 8, 12],
+                borderColor: "#33FF57",
+                fill: false,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

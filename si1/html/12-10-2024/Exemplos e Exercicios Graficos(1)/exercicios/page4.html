@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 4: Gráfico de Pizza</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      .chart-container {
+        width: 100%;
+        max-width: 600px;
+        height: 400px;
+        margin: 0 auto;
+      }
+      .chart-container canvas {
+        width: 100% !important;
+        height: auto !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exercício 4: Gráfico de Pizza</h1>
+
+    <div class="chart-container">
+      <canvas class="pie-chart"></canvas>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        const ctx = $(".pie-chart")[0].getContext("2d");
+
+        const pieChart = new Chart(ctx, {
+          type: "pie",
+          data: {
+            labels: [
+              "Categoria Pequena",
+              "Categoria Média",
+              "Categoria Grande",
+            ],
+            datasets: [
+              {
+                label: "Valores",
+                data: [35, 52, 20],
+                backgroundColor: [
+                  "rgba(255, 99, 132, 0.2)",
+                  "rgba(54, 162, 235, 0.2)",
+                  "rgba(255, 206, 86, 0.2)",
+                ],
+                borderColor: [
+                  "rgba(255, 99, 132, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(255, 206, 86, 1)",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
